@@ -1,16 +1,14 @@
 <!-- Describe task in general -->
 
 <p>
-    Sum two passed ints
+    In a given text you need to sum all of the numbers. Only separated numbers should be counted, if number is part of a word it shouldn't be counted.
 </p>
 
-<p style="text-align: center;">
-    <img  title="example" src="{{MEDIA}}example.png" alt="example" style="max-height: 83px"/>
-</p>
+<p>text consist from only numbers, spaces and english letters</p>
 
 <!-- Explain input and output values -->
 <p>
-    <strong>Input: </strong> Two arguments. Both are ints.
+    <strong>Input: </strong> String.
 </p>
 
 <p>
@@ -25,28 +23,25 @@
     </p>
 
 {% if interpreter.slug == "js-node" %}
-<pre class="brush: javascript">sumTwo(2, 3) == 5
-sumTwo(5, 7) == 12
+<pre class="brush: javascript">sumNumbers('hi') == 0
+sumNumbers('who is 1st here') == 0
+sumNumbers('my numbers is 2') == 2
+sumNumbers('This picture is an oil on canvas '
+ 'painting by Danish artist Anna '
+ 'Petersen between 1845 and 1910 year') == 3755
+sumNumbers('5 plus 6 is') == 11
+sumNumbers('') == 0
 </pre>
 {% else %}
-<pre class="brush: python">sum_two(2, 3) == 5
-sum_two(5, 7) == 12
+<pre class="brush: python">sum_numbers('hi') == 0
+sum_numbers('who is 1st here') == 0
+sum_numbers('my numbers is 2') == 2
+sum_numbers('This picture is an oil on canvas '
+ 'painting by Danish artist Anna '
+ 'Petersen between 1845 and 1910 year') == 3755
+sum_numbers('5 plus 6 is') == 11
+sum_numbers('') == 0
 </pre>
 {% endif %}
 </div>
 
-
-<!-- Here you can explain how it can be used in development -->
-<!-- The section is optional -->
-<p class="for_info_only">
-
-    <strong>How it’s used: </strong>
-    <i>(math is used everywhere)</i>
-</p>
-
-<!-- Here you can explain some constraints for input-->
-<!-- The section is optional -->
-<p>
-    <strong>Precondition:</strong>
-    <i>both given ints should be between -1000 and 1000</i>
-</p>
